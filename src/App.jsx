@@ -4,6 +4,8 @@ import Catalogpage from "./Components/Catalog/Catalogpage";
 import Cartpage from "./Components/Cart/Cartpage";
 import Navbar from "./Components/Navbar/Navbar";
 
+import "./Styles/App.css";
+
 function App() {
   return (
     <div className="App">
