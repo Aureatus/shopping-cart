@@ -1,7 +1,7 @@
 import React from "react";
 
 const Catalogpage = () => {
-  return <div>Catalog</div>;
+  return <main aria-label="Catalog Section">Catalog</main>;
 };
 
 export default Catalogpage;

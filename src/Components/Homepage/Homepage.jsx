@@ -1,7 +1,7 @@
 import React from "react";
 
 const Homepage = () => {
-  return <div>Homepage</div>;
+  return <main aria-label="Home Section">Homepage</main>;
 };
 
 export default Homepage;
