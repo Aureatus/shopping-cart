@@ -1,6 +1,8 @@
 import React from "react";
 import CartItems from "./CartItems";
 
+import "../../Styles/Cart/Cartpage.css";
+
 const Cartpage = () => {
   const cartItemArray = ["a", "b", "c", "d", "e"];
 
