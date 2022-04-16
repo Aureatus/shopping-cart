@@ -7,11 +7,31 @@ div.App > header {
 
   justify-items: center;
   align-items: center;
+
+  background-color: #c7c39f;
 }
 
 #root > div > header > h1 {
   height: 100%;
-  width: 100%;
+  width: 80%;
 
   margin: 0%;
+
+  color: #e3e2da;
+  font-family: "Raleway", sans-serif;
+  font-size: calc(2rem + 1vw);
+  font-weight: 700;
+}
+
+#root > div > header > a {
+  color: #e3e2da;
+  font-family: "Raleway", sans-serif;
+  font-size: calc(1rem + 0.5vw);
+  font-weight: 500;
+
+  text-decoration: underline 3px #787028;
+}
+
+#root > div > header > a:visited {
+  color: #e3e2da;
 }
