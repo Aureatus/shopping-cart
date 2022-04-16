@@ -1,0 +1,49 @@
+#root > div > main[aria-label="Home Section"] {
+  /* for future styling change:background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);*/
+
+  height: 100%;
+  width: 100%;
+
+  background-color: #ab9e2965;
+
+  display: grid;
+  grid-template: 1fr 10fr / 1fr;
+
+  justify-items: center;
+  align-items: center;
+}
+
+#root > div > main[aria-label="Home Section"] > h1 {
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #e3e2da;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  text-shadow: 1.5px 1.5px black;
+}
+
+#root > div > main[aria-label="Home Section"] > p {
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
