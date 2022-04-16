@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../Styles/Catalog/CatalogItem.css";
+
 const CatalogItem = (props) => {
   return (
     <div className="item" key={props.index}>
