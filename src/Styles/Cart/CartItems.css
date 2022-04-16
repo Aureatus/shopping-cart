@@ -1,0 +1,44 @@
+div.cart-item {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+
+  justify-items: center;
+  align-items: center;
+}
+
+div.cart-item > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.cart-item > p {
+  height: 60%;
+  width: 40%;
+
+  margin: 0%;
+  padding: 0%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e3e2da;
+
+  border: 2px solid #ab9e29;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: "lnum" 1;
+  -moz-font-feature-settings: "lnum=1";
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+}
