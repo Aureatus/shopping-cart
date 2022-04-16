@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../Styles/Cart/CartItems.css";
+
 const CartItems = (props) => {
   return (
     <div className="cart-item">
