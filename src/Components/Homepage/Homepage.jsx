@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import "../../Styles/Homepage/Homepage.css";
+
 const Homepage = () => {
   const typeEffect = () => {
     let i = 0;
