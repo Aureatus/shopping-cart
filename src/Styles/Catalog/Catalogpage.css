@@ -40,4 +40,6 @@
 
   justify-items: center;
   align-items: center;
+
+  row-gap: 5%;
 }
