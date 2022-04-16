@@ -2,6 +2,8 @@ import React from "react";
 
 import CatalogItem from "./CatalogItem";
 
+import "../../Styles/Catalog/Catalogpage.css";
+
 const Catalogpage = () => {
   const itemArray = ["a", "b", "c", "d", "e"];
   return (
