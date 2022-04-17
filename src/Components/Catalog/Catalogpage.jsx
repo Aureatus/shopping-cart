@@ -6,10 +6,6 @@ import "../../Styles/Catalog/Catalogpage.css";
 
 const Catalogpage = (props) => {
   const shopData = props.shopData;
-  if (shopData !== null) {
-    console.log("success");
-  }
-  console.log(shopData);
 
   if (shopData === null) {
     return (
