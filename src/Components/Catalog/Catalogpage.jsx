@@ -4,18 +4,38 @@ import CatalogItem from "./CatalogItem";
 
 import "../../Styles/Catalog/Catalogpage.css";
 
-const Catalogpage = () => {
-  const itemArray = ["a", "b", "c", "d", "e"];
-  return (
-    <main aria-label="Catalog Section">
-      <h1>Catalog</h1>
-      <section className="items">
-        {itemArray.map((e, index) => (
-          <CatalogItem key={index} index={index} e={e} />
-        ))}
-      </section>
-    </main>
-  );
+const Catalogpage = (props) => {
+  const shopData = props.shopData;
+  if (shopData !== null) {
+    console.log("success");
+  }
+  console.log(shopData);
+
+  if (shopData === null) {
+    return (
+      <main aria-label="Catalog Section">
+        <h1>Catalog</h1>
+        <h1>Items loading... Please wait.</h1>
+      </main>
+    );
+  } else if (shopData !== null) {
+    return (
+      <main aria-label="Catalog Section">
+        <h1>Catalog</h1>
+        <section className="items">
+          {shopData.map((e, index) => (
+            <CatalogItem
+              key={e.id}
+              index={index}
+              title={e.title}
+              image={e.image}
+              price={e.price}
+            />
+          ))}
+        </section>
+      </main>
+    );
+  }
 };
 
 export default Catalogpage;

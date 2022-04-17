@@ -4,9 +4,10 @@ import "../../Styles/Catalog/CatalogItem.css";
 
 const CatalogItem = (props) => {
   return (
-    <div className="item" key={props.index}>
-      <img src="" alt="" />
-      <p className="itemName">{props.e}</p>
+    <div className="item">
+      <img src={props.image} alt="" />
+      <p className="itemName">{props.title}</p>
+      <h2 className="itemCost">£{props.price}</h2>
       <form>
         <input type="number" id="itemAmount" defaultValue={1} />
         <button type="submit" id="addToCart">
