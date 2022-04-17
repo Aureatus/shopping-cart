@@ -7,12 +7,16 @@ const Homepage = () => {
     let i = 0;
     let text = "Welcome to my mock e-commerce website.";
     let speed = 20;
-
     const typeWriter = () => {
       if (i < text.length) {
-        document.querySelector(".main-text").textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
+        if (
+          !window.location.toString().includes("catalog") &&
+          !window.location.toString().includes("cart")
+        ) {
+          document.querySelector(".main-text").textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
       }
     };
     typeWriter();
