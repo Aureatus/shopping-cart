@@ -5,7 +5,9 @@ import "../../Styles/Catalog/CatalogItem.css";
 const CatalogItem = (props) => {
   return (
     <div className="item">
-      <img src={props.image} alt="" />
+      <div className="itemImage">
+        <img src={props.image} alt="" />
+      </div>
       <p className="itemName">{props.title}</p>
       <h2 className="itemCost">£{props.price}</h2>
       <form>
