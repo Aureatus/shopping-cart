@@ -48,9 +48,6 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(cartData);
-  });
   return (
     <div className="App">
       <Navbar />
