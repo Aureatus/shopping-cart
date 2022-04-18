@@ -20,7 +20,6 @@ function App() {
   };
 
   const addToCart = (index) => {
-    console.log(index);
     if (!cartData[index]) {
       const newCartData = cartData.concat(shopData[index]);
       setCartData(newCartData);
