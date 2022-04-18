@@ -13,10 +13,20 @@ const CatalogItem = (props) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          props.addToCart(props.id);
+          props.addToCart(props.index);
         }}
       >
-        <input type="number" id="itemAmount" defaultValue={1} />
+        <input
+          type="number"
+          id="itemAmount"
+          defaultValue={1}
+          onChange={() => {
+            props.changeItemAmount(
+              props.index,
+              document.querySelectorAll("#itemAmount")[props.index].value
+            );
+          }}
+        />
         <button type="submit" id="addToCart">
           Add To Cart
         </button>

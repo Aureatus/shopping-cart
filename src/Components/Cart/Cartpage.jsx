@@ -3,15 +3,22 @@ import CartItems from "./CartItems";
 
 import "../../Styles/Cart/Cartpage.css";
 
-const Cartpage = () => {
-  const cartItemArray = ["a", "b", "c", "d", "e"];
+const Cartpage = (props) => {
+  const cartData = props.cartData;
 
   return (
     <main aria-label="Cart Section">
       <header className="cart-item-amount">5 items in your basket.</header>
       <section className="cart-items">
-        {cartItemArray.map((e, index) => (
-          <CartItems key={index} index={index} e={e} />
+        {cartData.map((e, index) => (
+          <CartItems
+            key={e.id}
+            index={index}
+            title={e.title}
+            image={e.image}
+            price={e.price}
+            id={e.id}
+          />
         ))}
       </section>
       <section className="checkout">

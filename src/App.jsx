@@ -11,8 +11,28 @@ function App() {
   let [shopData, setShopData] = useState(null);
   let [cartData, setCartData] = useState([]);
 
-  const addToCart = (id) => {
-    const newCartData = cartData.concat(shopData[id]);
+  const changeItemAmount = (index, newAmount) => {
+    const newShopElement = shopData[index];
+    newShopElement.amount = Number(newAmount);
+    const newShopData = shopData;
+    newShopData[index] = newShopElement;
+    setShopData(newShopData);
+  };
+
+  const addToCart = (index) => {
+    console.log(index);
+    if (!cartData[index]) {
+      const newCartData = cartData.concat(shopData[index]);
+      setCartData(newCartData);
+    } else {
+      const newCartData = cartData;
+      cartData.splice(index, 1, shopData[index]);
+      setCartData(newCartData);
+    }
+  };
+
+  const removeFromCart = (id) => {
+    const newCartData = cartData.filter((item) => item !== shopData[id]);
     setCartData(newCartData);
   };
 
@@ -21,8 +41,17 @@ function App() {
       mode: "cors",
     })
       .then((response) => response.json())
-      .then((data) => setShopData(data));
+      .then((data) => {
+        data.forEach((e) => {
+          e.amount = 1;
+        });
+        setShopData(data);
+      });
   }, []);
+
+  useEffect(() => {
+    console.log(cartData);
+  });
   return (
     <div className="App">
       <Navbar />
@@ -30,9 +59,20 @@ function App() {
         <Route index element={<Homepage />} />
         <Route
           path="catalog"
-          element={<Catalogpage shopData={shopData} addToCart={addToCart} />}
+          element={
+            <Catalogpage
+              shopData={shopData}
+              addToCart={addToCart}
+              changeItemAmount={changeItemAmount}
+            />
+          }
         />
-        <Route path="cart" element={<Cartpage />} />
+        <Route
+          path="cart"
+          element={
+            <Cartpage cartData={cartData} removeFromCart={removeFromCart} />
+          }
+        />
       </Routes>
     </div>
   );

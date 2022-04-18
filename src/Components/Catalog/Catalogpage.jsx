@@ -28,6 +28,7 @@ const Catalogpage = (props) => {
               price={e.price}
               id={e.id}
               addToCart={props.addToCart}
+              changeItemAmount={props.changeItemAmount}
             />
           ))}
         </section>
