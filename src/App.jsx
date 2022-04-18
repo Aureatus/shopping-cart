@@ -20,7 +20,7 @@ function App() {
   };
 
   const addToCart = (index) => {
-    if (!cartData[index]) {
+    if (cartData.find((element) => element.id) === undefined) {
       const newCartData = cartData.concat(shopData[index]);
       setCartData(newCartData);
     } else {

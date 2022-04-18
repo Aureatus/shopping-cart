@@ -5,10 +5,10 @@ import "../../Styles/Cart/CartItems.css";
 const CartItems = (props) => {
   return (
     <div className="cart-item">
-      <img src="" alt="" />
-      <p className="item-name">{props.e}</p>
-      <p className="item-amount">1</p>
-      <p className="item-price">£2</p>
+      <img src={props.image} alt="" />
+      <p className="item-name">{props.title}</p>
+      <p className="item-amount">Amount: {props.amount}</p>
+      <p className="item-price">£{props.price}</p>
     </div>
   );
 };

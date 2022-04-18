@@ -17,6 +17,7 @@ const Cartpage = (props) => {
             title={e.title}
             image={e.image}
             price={e.price}
+            amount={e.amount}
             id={e.id}
           />
         ))}
