@@ -10,7 +10,12 @@ const CatalogItem = (props) => {
       </div>
       <p className="itemName">{props.title}</p>
       <h2 className="itemCost">£{props.price}</h2>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.addToCart(props.id);
+        }}
+      >
         <input type="number" id="itemAmount" defaultValue={1} />
         <button type="submit" id="addToCart">
           Add To Cart

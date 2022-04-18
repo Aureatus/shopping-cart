@@ -9,6 +9,12 @@ import { useEffect, useState } from "react";
 
 function App() {
   let [shopData, setShopData] = useState(null);
+  let [cartData, setCartData] = useState([]);
+
+  const addToCart = (id) => {
+    const newCartData = cartData.concat(shopData[id]);
+    setCartData(newCartData);
+  };
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products?limit=12`, {
@@ -17,13 +23,15 @@ function App() {
       .then((response) => response.json())
       .then((data) => setShopData(data));
   }, []);
-
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route index element={<Homepage />} />
-        <Route path="catalog" element={<Catalogpage shopData={shopData} />} />
+        <Route
+          path="catalog"
+          element={<Catalogpage shopData={shopData} addToCart={addToCart} />}
+        />
         <Route path="cart" element={<Cartpage />} />
       </Routes>
     </div>

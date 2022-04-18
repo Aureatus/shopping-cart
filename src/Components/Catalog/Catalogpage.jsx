@@ -26,6 +26,8 @@ const Catalogpage = (props) => {
               title={e.title}
               image={e.image}
               price={e.price}
+              id={e.id}
+              addToCart={props.addToCart}
             />
           ))}
         </section>
