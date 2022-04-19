@@ -5,6 +5,18 @@ import "../../Styles/Cart/Cartpage.css";
 
 const Cartpage = (props) => {
   const cartData = props.cartData;
+  const getTotalprice = () => {
+    if (cartData.length === 0) {
+      return 0;
+    } else {
+      const itemPriceArray = cartData.map((e) => e.amount * e.price);
+      const totalPrice = itemPriceArray.reduce(
+        (previousValue, currentValue) => previousValue + currentValue
+      );
+
+      return totalPrice;
+    }
+  };
 
   return (
     <main aria-label="Cart Section">
@@ -25,7 +37,7 @@ const Cartpage = (props) => {
         ))}
       </section>
       <section className="checkout">
-        <p className="total-cost">Total price: £123</p>
+        <p className="total-cost">Total price: £{getTotalprice()}</p>
         <button>Check Out</button>
       </section>
     </main>
