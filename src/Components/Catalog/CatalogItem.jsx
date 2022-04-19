@@ -23,7 +23,9 @@ const CatalogItem = (props) => {
           onChange={() => {
             props.changeItemAmount(
               props.index,
-              document.querySelectorAll("#itemAmount")[props.index].value
+              document
+                .querySelectorAll(".item")
+                [props.index].querySelector("#itemAmount").value
             );
           }}
         />
