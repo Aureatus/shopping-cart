@@ -20,13 +20,11 @@ function App() {
   };
 
   const addToCart = (index) => {
-    if (cartData.find((element) => element.id) === undefined) {
+    if (shopData[index].added === false) {
       const newCartData = cartData.concat(shopData[index]);
       setCartData(newCartData);
-    } else {
-      const newCartData = cartData;
-      cartData.splice(index, 1, shopData[index]);
-      setCartData(newCartData);
+      const newShopData = shopData;
+      newShopData[index].added = true;
     }
   };
 
@@ -42,7 +40,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         data.forEach((e) => {
-          e.amount = 1;
+          e.added = false;
         });
         setShopData(data);
       });
