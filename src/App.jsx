@@ -41,6 +41,7 @@ function App() {
       .then((data) => {
         data.forEach((e) => {
           e.added = false;
+          e.amount = 1;
         });
         setShopData(data);
       });
