@@ -8,7 +8,9 @@ const Cartpage = (props) => {
 
   return (
     <main aria-label="Cart Section">
-      <header className="cart-item-amount">5 items in your basket.</header>
+      <header className="cart-item-amount">
+        {cartData.length} items in your basket.
+      </header>
       <section className="cart-items">
         {cartData.map((e, index) => (
           <CartItems
