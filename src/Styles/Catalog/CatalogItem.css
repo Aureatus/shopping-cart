@@ -55,6 +55,8 @@ div.item > form {
 
   display: grid;
   grid-template: 1fr / 2fr 1fr;
+
+  border: 2px solid #ab9e29;
 }
 
 div.item > form > input {
