@@ -4,7 +4,7 @@ div.cart-item {
   width: 100%;
 
   display: grid;
-  grid-template: 1fr / 1fr 2fr 1fr 1fr 1fr;
+  grid-template: 1fr / 1fr 2fr 2fr 1fr;
 
   justify-items: center;
   align-items: center;
