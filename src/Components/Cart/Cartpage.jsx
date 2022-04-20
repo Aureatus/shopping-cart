@@ -10,9 +10,14 @@ const Cartpage = (props) => {
       return 0;
     } else {
       const itemPriceArray = cartData.map((e) => e.amount * e.price);
-      const totalPrice = itemPriceArray.reduce(
+      let totalPrice = itemPriceArray.reduce(
         (previousValue, currentValue) => previousValue + currentValue
       );
+      if (Math.floor(totalPrice) === totalPrice) {
+        return totalPrice;
+      }
+
+      totalPrice = totalPrice.toFixed(2);
 
       return totalPrice;
     }
@@ -38,7 +43,9 @@ const Cartpage = (props) => {
         ))}
       </section>
       <section className="checkout">
-        <p className="total-cost">Total price: £{getTotalprice()}</p>
+        <p className="total-cost">
+          Total price:<br></br> £{getTotalprice()}
+        </p>
         <button>Check Out</button>
       </section>
     </main>
