@@ -42,8 +42,14 @@ function App() {
 
   const removeFromCart = (id) => {
     const newCartData = cartData.filter((item) => item.id !== id);
-    console.log(newCartData);
+    const newShopData = shopData.map((x) => {
+      if (x.id === id) {
+        x.added = false;
+      }
+      return x;
+    });
     setCartData(newCartData);
+    setShopData(newShopData);
   };
 
   useEffect(() => {
