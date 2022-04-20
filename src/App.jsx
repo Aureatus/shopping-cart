@@ -19,6 +19,13 @@ function App() {
     setShopData(newShopData);
   };
 
+  const changeCartItemAmount = (index, newAmount) => {
+    const newCartElement = cartData[index];
+    newCartElement.amount = Number(newAmount);
+    const newCartData = [...cartData];
+    newCartData[index] = newCartElement;
+    setCartData(newCartData);
+  };
   const addToCart = (index) => {
     if (shopData[index].added === false) {
       const newCartData = cartData.concat(shopData[index]);
@@ -65,7 +72,11 @@ function App() {
         <Route
           path="cart"
           element={
-            <Cartpage cartData={cartData} removeFromCart={removeFromCart} />
+            <Cartpage
+              cartData={cartData}
+              removeFromCart={removeFromCart}
+              changeCartItemAmount={changeCartItemAmount}
+            />
           }
         />
       </Routes>
