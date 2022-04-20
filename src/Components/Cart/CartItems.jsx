@@ -8,10 +8,9 @@ const CartItems = (props) => {
       <div className="cart-item-image">
         <img src={props.image} alt="" />
       </div>
-
       <p className="item-name">{props.title}</p>
       <p className="item-amount">Amount: {props.amount}</p>
-      <p className="item-price">£{props.price}</p>
+      <p className="item-price">£{props.price * props.amount}</p>
     </div>
   );
 };
