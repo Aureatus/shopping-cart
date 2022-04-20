@@ -3,6 +3,13 @@ import React from "react";
 import "../../Styles/Cart/CartItems.css";
 
 const CartItems = (props) => {
+  const calculatePrice = (price, amount) => {
+    if (Math.floor(price) === price) {
+      return price * amount.toFixed(2);
+    }
+    price = Number(price).toFixed(2);
+    return (price * amount).toFixed(2);
+  };
   return (
     <div className="cart-item">
       <div className="cart-item-image">
@@ -25,7 +32,7 @@ const CartItems = (props) => {
           }}
         />
       </div>
-      <p className="item-price">£{props.price * props.amount}</p>
+      <p className="item-price">£{calculatePrice(props.price, props.amount)}</p>
     </div>
   );
 };
