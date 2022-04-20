@@ -17,7 +17,7 @@ const CartItems = (props) => {
       </div>
       <p className="item-name">{props.title}</p>
       <div className="amount-container">
-        <p className="item-amount">Amount: {props.amount}</p>
+        <p className="item-amount">Amount:</p>
         <input
           type="number"
           id="cart-item-amount"
