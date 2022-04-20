@@ -33,6 +33,7 @@ const Cartpage = (props) => {
             price={e.price}
             amount={e.amount}
             id={e.id}
+            changeCartItemAmount={props.changeCartItemAmount}
           />
         ))}
       </section>
