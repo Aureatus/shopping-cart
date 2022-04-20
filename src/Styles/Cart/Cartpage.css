@@ -39,13 +39,11 @@
   height: 100%;
   width: 100%;
 
-  padding: 3%;
-
   overflow: auto;
 
   display: grid;
-  grid-auto-rows: minmax(15%, auto);
-  row-gap: 10%;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 10px;
 
   border: 2px solid #ab9e29;
 }
