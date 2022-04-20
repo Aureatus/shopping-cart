@@ -61,6 +61,10 @@ function App() {
         data.forEach((e) => {
           e.added = false;
           e.amount = 1;
+          if (Math.floor(e.price) === e.price) {
+            return;
+          }
+          e.price = e.price.toFixed(2);
         });
         setShopData(data);
       });
