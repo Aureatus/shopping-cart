@@ -4,14 +4,27 @@ div.cart-item {
   width: 100%;
 
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template: 1fr / 1fr 2fr 1fr 1fr 1fr;
 
   justify-items: center;
   align-items: center;
 }
 
-div.cart-item > img {
+div.cart-item-image {
+  height: 70%;
+  width: auto;
+  max-height: 20vh;
+  max-width: 10vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.cart-item img {
+  height: 100%;
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +32,7 @@ div.cart-item > img {
 
 div.cart-item > p {
   height: 60%;
-  width: 40%;
+  width: 80%;
 
   margin: 0%;
   padding: 0%;
@@ -27,6 +40,8 @@ div.cart-item > p {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 
   background-color: #e3e2da;
 
