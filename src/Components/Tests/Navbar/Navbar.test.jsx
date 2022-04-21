@@ -7,7 +7,7 @@ import "@testing-library/jest-dom";
 import App from "../../../App";
 import userEvent from "@testing-library/user-event";
 
-test(`Full app navigating using Navbar Links`, async () => {
+test(`Full app navigation using Navbar Links`, async () => {
   render(
     <BrowserRouter>
       <App />
