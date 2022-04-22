@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders header and homepage correctly 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header
+      aria-label="Navigation Bar"
+    >
+      <h1>
+        Shopping Cart
+      </h1>
+      <a
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        href="/catalog"
+      >
+        Catalog
+      </a>
+      <a
+        href="/cart"
+      >
+        Cart
+      </a>
+    </header>
+    <main
+      aria-label="Home Section"
+    >
+      <h1>
+        Homepage
+      </h1>
+      <p
+        class="main-text"
+      >
+        W
+      </p>
+    </main>
+  </div>
+</div>
+`;
