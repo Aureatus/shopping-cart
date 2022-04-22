@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { createMemoryHistory } from "history";
 import { MemoryRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 import "@testing-library/jest-dom";
 
@@ -20,13 +21,13 @@ describe("Full app navigation", () => {
       screen.getByRole("banner", { name: /navigation bar/i })
     ).toBeInTheDocument();
 
-    history.push("/cart");
+    userEvent.click(screen.getByRole("link", { name: /cart/i }));
 
     expect(
       screen.getByRole("banner", { name: /navigation bar/i })
     ).toBeInTheDocument();
 
-    history.push("/catalog");
+    userEvent.click(screen.getByRole("link", { name: /catalog/i }));
 
     expect(
       screen.getByRole("banner", { name: /navigation bar/i })
