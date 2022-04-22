@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 function App() {
   let [shopData, setShopData] = useState(null);
   let [cartData, setCartData] = useState([]);
+  let [error, setError] = useState("");
 
   const changeItemAmount = (index, newAmount) => {
     const newShopElement = shopData[index];
@@ -67,7 +68,8 @@ function App() {
           e.price = e.price.toFixed(2);
         });
         setShopData(data);
-      });
+      })
+      .catch((error) => setError(error.message));
   }, []);
 
   return (
@@ -82,6 +84,7 @@ function App() {
               shopData={shopData}
               addToCart={addToCart}
               changeItemAmount={changeItemAmount}
+              error={error}
             />
           }
         />
