@@ -7,7 +7,14 @@ import "../../Styles/Catalog/Catalogpage.css";
 const Catalogpage = (props) => {
   const shopData = props.shopData;
 
-  if (shopData === null) {
+  if (props.error) {
+    return (
+      <main aria-label="Catalog Section">
+        <h1>Catalog</h1>
+        <h1>{props.error}</h1>
+      </main>
+    );
+  } else if (shopData === null) {
     return (
       <main aria-label="Catalog Section">
         <h1>Catalog</h1>
