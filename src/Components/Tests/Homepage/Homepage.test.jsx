@@ -13,7 +13,7 @@ describe("Homepage renders correctly", () => {
     );
 
     const welcomeText = await screen.findByText(
-      /welcome to my mock e\-commerce website\./i
+      /welcome to my mock e-commerce website\./i
     );
     expect(welcomeText).toBeInTheDocument();
   });
