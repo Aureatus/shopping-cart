@@ -78,5 +78,28 @@ describe("Cart content renders according to cartData", () => {
     userEvent.click(screen.getByRole("link", { name: /cart/i }));
 
     expect(screen.getByText(/total price: £13/i)).toBeInTheDocument();
+
+    const amountInput = screen.getByRole("spinbutton");
+    userEvent.type(amountInput, "2");
+
+    expect(screen.getByText(/total price: £156/i)).toBeInTheDocument();
+  });
+
+  it("Cart item removed when amount is 0", async () => {
+    render(
+      <MemoryRouter initialEntries={["/catalog"]}>
+        <App />
+      </MemoryRouter>
+    );
+
+    const addToCartButton = await screen.findByRole("button", {
+      name: /Add To Cart/,
+    });
+    userEvent.click(addToCartButton);
+    userEvent.click(screen.getByRole("link", { name: /cart/i }));
+
+    const amountInput = screen.getByRole("spinbutton");
+    userEvent.clear(amountInput);
+    expect(screen.queryByText("test")).not.toBeInTheDocument();
   });
 });
