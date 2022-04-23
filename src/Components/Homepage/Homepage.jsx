@@ -8,10 +8,11 @@ const Homepage = () => {
     let text = "Welcome to my mock e-commerce website.";
     let speed = 20;
     const typeWriter = () => {
+      const regexCart = /cart$/;
       if (i < text.length) {
         if (
           !window.location.toString().includes("catalog") &&
-          !window.location.toString().includes("cart")
+          !window.location.toString().match(regexCart)
         ) {
           document.querySelector(".main-text").textContent += text.charAt(i);
           i++;
