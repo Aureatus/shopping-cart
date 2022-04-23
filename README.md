@@ -1,5 +1,5 @@
 # Shopping Cart
-`Put gif here of site in action`
+![Gif displaying live site being used](./shopping-cart-demo.gif)
 
 ## Live Version
 [Shopping Cart](https://aureatus.github.io/shopping-cart/)
