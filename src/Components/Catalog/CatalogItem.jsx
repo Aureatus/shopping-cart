@@ -20,6 +20,7 @@ const CatalogItem = (props) => {
           type="number"
           id="itemAmount"
           defaultValue={1}
+          min="1"
           onChange={() => {
             props.changeItemAmount(
               props.index,
