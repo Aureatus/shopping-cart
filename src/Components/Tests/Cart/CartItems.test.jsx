@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
-import { within } from "@testing-library/dom";
 import { MemoryRouter } from "react-router-dom";
 import App from "../../../App";
 import userEvent from "@testing-library/user-event";
