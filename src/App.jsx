@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./Components/Homepage/Homepage";
-import Catalogpage from "./Components/Catalog/Catalogpage";
-import Cartpage from "./Components/Cart/Cartpage";
-import Navbar from "./Components/Navbar/Navbar";
-
+import HomePage from "./Components/Homepage/HomePage";
+import CatalogPage from "./Components/Catalog/CatalogPage";
+import NavBar from "./Components/Navbar/NavBar";
+import CartPage from "./Components/Cart/CartPage";
 import "./Styles/App.css";
 import { useEffect, useState } from "react";
 
@@ -74,13 +73,13 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <NavBar />
       <Routes>
-        <Route index element={<Homepage />} />
+        <Route index element={<HomePage />} />
         <Route
           path="catalog"
           element={
-            <Catalogpage
+            <CatalogPage
               shopData={shopData}
               addToCart={addToCart}
               changeItemAmount={changeItemAmount}
@@ -91,7 +90,7 @@ function App() {
         <Route
           path="cart"
           element={
-            <Cartpage
+            <CartPage
               cartData={cartData}
               removeFromCart={removeFromCart}
               changeCartItemAmount={changeCartItemAmount}

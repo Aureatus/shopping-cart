@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
-import "../../Styles/Homepage/Homepage.css";
+import "../../Styles/Homepage/HomePage.css";
 
-const Homepage = () => {
+const HomePage = () => {
   const typeEffect = () => {
     let i = 0;
     let text = "Welcome to my mock e-commerce website.";
@@ -35,4 +35,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

@@ -1,9 +1,9 @@
 import React from "react";
 import CartItems from "./CartItems";
 
-import "../../Styles/Cart/Cartpage.css";
+import "../../Styles/Cart/CartPage.css";
 
-const Cartpage = (props) => {
+const CartPage = (props) => {
   const cartData = props.cartData;
   const getTotalprice = () => {
     if (cartData.length === 0) {
@@ -52,4 +52,4 @@ const Cartpage = (props) => {
   );
 };
 
-export default Cartpage;
+export default CartPage;

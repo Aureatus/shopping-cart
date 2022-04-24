@@ -2,9 +2,9 @@ import React from "react";
 
 import CatalogItem from "./CatalogItem";
 
-import "../../Styles/Catalog/Catalogpage.css";
+import "../../Styles/Catalog/CatalogPage.css";
 
-const Catalogpage = (props) => {
+const CatalogPage = (props) => {
   const shopData = props.shopData;
 
   if (props.error) {
@@ -60,4 +60,4 @@ const Catalogpage = (props) => {
   }
 };
 
-export default Catalogpage;
+export default CatalogPage;

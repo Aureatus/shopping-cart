@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Styles/Navbar/Navbar.css";
+import "../../Styles/Navbar/NavBar.css";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <header aria-label="Navigation Bar">
       <h1>Shopping Cart</h1>
@@ -13,4 +13,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
