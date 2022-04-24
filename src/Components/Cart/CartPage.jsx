@@ -3,8 +3,7 @@ import CartItems from "./CartItems";
 
 import "../../Styles/Cart/CartPage.css";
 
-const CartPage = (props) => {
-  const cartData = props.cartData;
+const CartPage = ({ cartData, changeCartItemAmount }) => {
   const getTotalprice = () => {
     if (cartData.length === 0) {
       return 0;
@@ -38,7 +37,7 @@ const CartPage = (props) => {
             price={e.price}
             amount={e.amount}
             id={e.id}
-            changeCartItemAmount={props.changeCartItemAmount}
+            changeCartItemAmount={changeCartItemAmount}
           />
         ))}
       </section>

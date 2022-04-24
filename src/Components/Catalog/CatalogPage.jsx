@@ -4,14 +4,12 @@ import CatalogItem from "./CatalogItem";
 
 import "../../Styles/Catalog/CatalogPage.css";
 
-const CatalogPage = (props) => {
-  const shopData = props.shopData;
-
-  if (props.error) {
+const CatalogPage = ({ shopData, error, addToCart, changeItemAmount }) => {
+  if (error) {
     return (
       <main aria-label="Catalog Section">
         <h1>Catalog</h1>
-        <h1>{props.error}</h1>
+        <h1>{error}</h1>
       </main>
     );
   } else if (shopData === null) {
@@ -36,8 +34,8 @@ const CatalogPage = (props) => {
                   image={e.image}
                   price={e.price}
                   id={e.id}
-                  addToCart={props.addToCart}
-                  changeItemAmount={props.changeItemAmount}
+                  addToCart={addToCart}
+                  changeItemAmount={changeItemAmount}
                 />
               );
             } else if (e.added === true) {

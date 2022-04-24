@@ -2,18 +2,25 @@ import React from "react";
 
 import "../../Styles/Catalog/CatalogItem.css";
 
-const CatalogItem = (props) => {
+const CatalogItem = ({
+  image,
+  title,
+  price,
+  index,
+  addToCart,
+  changeItemAmount,
+}) => {
   return (
     <div className="item">
       <div className="itemImage">
-        <img src={props.image} alt="" />
+        <img src={image} alt="" />
       </div>
-      <p className="itemName">{props.title}</p>
-      <h2 className="itemCost">£{props.price}</h2>
+      <p className="itemName">{title}</p>
+      <h2 className="itemCost">£{price}</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          props.addToCart(props.index);
+          addToCart(index);
         }}
       >
         <input
@@ -22,11 +29,11 @@ const CatalogItem = (props) => {
           defaultValue={1}
           min="1"
           onChange={() => {
-            props.changeItemAmount(
-              props.index,
+            changeItemAmount(
+              index,
               document
                 .querySelectorAll(".item")
-                [props.index].querySelector("#itemAmount").value
+                [index].querySelector("#itemAmount").value
             );
           }}
         />

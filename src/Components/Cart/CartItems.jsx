@@ -2,7 +2,14 @@ import React from "react";
 
 import "../../Styles/Cart/CartItems.css";
 
-const CartItems = (props) => {
+const CartItems = ({
+  image,
+  title,
+  amount,
+  index,
+  price,
+  changeCartItemAmount,
+}) => {
   const calculatePrice = (price, amount) => {
     if (Math.floor(price) === price) {
       return price * amount.toFixed(2);
@@ -13,26 +20,26 @@ const CartItems = (props) => {
   return (
     <div className="cart-item">
       <div className="cart-item-image">
-        <img src={props.image} alt="" />
+        <img src={image} alt="" />
       </div>
-      <p className="item-name">{props.title}</p>
+      <p className="item-name">{title}</p>
       <div className="amount-container">
         <p className="item-amount">Amount:</p>
         <input
           type="number"
           id="cart-item-amount"
-          defaultValue={props.amount}
+          defaultValue={amount}
           onChange={() => {
-            props.changeCartItemAmount(
-              props.index,
+            changeCartItemAmount(
+              index,
               document
                 .querySelectorAll(".cart-item")
-                [props.index].querySelector("#cart-item-amount").value
+                [index].querySelector("#cart-item-amount").value
             );
           }}
         />
       </div>
-      <p className="item-price">£{calculatePrice(props.price, props.amount)}</p>
+      <p className="item-price">£{calculatePrice(price, amount)}</p>
     </div>
   );
 };
